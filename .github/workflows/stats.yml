@@ -21,5 +21,5 @@ jobs:
       - name: Ejecutar pruebas
         run: npm test
 
-      - name: Completado
+      - name: Tarea completada
         run: echo "Tarea completada por Kenner"
