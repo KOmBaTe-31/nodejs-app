@@ -9,17 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clonar repositorio 📥
+      - name: Clonar repositorio
         uses: actions/checkout@v4
 
-      - name: Instalar dependencias 🧩
+      - name: Instalar dependencias
         run: npm install
 
-      - name: Lint del código 🧹
+      - name: Lint del código
         run: npm run lint
 
-      - name: Ejecutar pruebas 🧪
+      - name: Ejecutar pruebas
         run: npm test
 
-      - name: Completo ✅
-        run: echo "Completo por Kenner ✅"
+      - name: Completado
+        run: echo "Tarea completada por Kenner"
