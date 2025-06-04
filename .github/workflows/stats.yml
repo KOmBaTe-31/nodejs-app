@@ -1,4 +1,4 @@
-name: Validación de PR (Instalación, Lint y Test)
+name: PR Validation
 
 on:
   pull_request:
