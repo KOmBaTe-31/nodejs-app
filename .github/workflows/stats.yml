@@ -2,7 +2,8 @@ name: PR Validation
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: 
+      - main
 
 jobs:
   validate-pr:
@@ -21,5 +22,5 @@ jobs:
       - name: Ejecutar pruebas
         run: npm test
 
-      - name: Tarea completada
+      - name: ¡Completado!
         run: echo "Tarea completada por Kenner"
