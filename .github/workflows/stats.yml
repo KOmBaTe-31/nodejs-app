@@ -1,4 +1,4 @@
-name: Validación de PR
+name: PR Validation
 
 on:
   pull_request:
@@ -9,17 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clonar repositorio 📥
+      - name: Clonar repositorio
         uses: actions/checkout@v4
 
-      - name: Instalar dependencias 🧩
+      - name: Instalar dependencias
         run: npm install
 
-      - name: Lint del código 🧹
+      - name: Lint del código
         run: npm run lint
 
-      - name: Ejecutar pruebas 🧪
+      - name: Ejecutar pruebas
         run: npm test
 
-      - name: Completado ✅
-        run: echo 'Completado por Kenner'
+      - name: Tarea completada
+        run: echo "Tarea completada por Kenner"
