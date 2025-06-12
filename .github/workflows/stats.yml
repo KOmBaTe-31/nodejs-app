@@ -1,0 +1,27 @@
+name: PR Validation
+
+on:
+  pull_request:
+    branches: 
+      - main
+
+jobs:
+  validate-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Lint del código
+        run: npm run lint
+
+      - name: Ejecutar pruebas
+        run: npm test
+
+      - name: ¡Completado!
+        run: echo "Tarea completada por Kenner"
+
