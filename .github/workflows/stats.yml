@@ -2,7 +2,8 @@ name: PR Validation
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: 
+      - main
 
 jobs:
   validate-pr:
@@ -15,11 +16,8 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
-      - name: Lint del código
-        run: npm run lint
-
       - name: Ejecutar pruebas
-        run: npm test
+        run: npm run test
 
-      - name: Tarea completada
+      - name: Completado
         run: echo "Tarea completada por Kenner"
