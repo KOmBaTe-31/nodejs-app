@@ -20,7 +20,7 @@ jobs:
   validate-pr:
     runs-on: ubuntu-latest
     env:
-
+      MY_FIRST_VAR: ${{ vars.NAME }}
     steps:
       - name: Clonar repositorio
         uses: actions/checkout@v4
