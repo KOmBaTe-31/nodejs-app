@@ -2,12 +2,25 @@ name: PR Validation
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: 
+      - main
+  workflow_dispatch:
+    inputs:
+      environment:
+        Description: "El entorno para el deploy será"
+        required: true
+        default: "Prod"
+        type: choice
+        options:
+          - Prod
+          - QA
+          - Dev 
 
 jobs:
   validate-pr:
     runs-on: ubuntu-latest
-
+    env:
+      MY_FIRST_VAR: ${{ vars.NAME }}
     steps:
       - name: Clonar repositorio
         uses: actions/checkout@v4
@@ -15,11 +28,8 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
-      - name: Lint del código
-        run: npm run lint
-
       - name: Ejecutar pruebas
-        run: npm test
+        run: npm run test
 
-      - name: Tarea completada
-        run: echo "Tarea completada por Kenner"
+      - name: Completado
+        run: echo "Tarea completada por ${{ vars.NAME }}"
